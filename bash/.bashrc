@@ -6,6 +6,8 @@ alias rc="$EDITOR ~/.bashrc"
 alias vrc="$EDITOR ~/.vimrc"
 alias nvrc="$EDITOR ~/.config/nvim/init.vim"
 
+alias e=$EDITOR
+
 export CLICOLOR=1
 
 if [ -x "$(command -v exa)" ]; then
