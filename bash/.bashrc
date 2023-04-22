@@ -51,7 +51,6 @@ alias f="fzf \
 	--bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort' \
 	--bind 'enter:execute(clear; bat --paging=always {}; clear)' \
 	--bind 'ctrl-o:execute(open {})+abort'"
-alias f='/Users/Will/Documents/Projects/config/fzf/rfv.sh'
 
 alias t='task'
 
