@@ -67,7 +67,6 @@ cask "skype"
 cask "slack"
 cask "sublime-text"
 cask "transmission"
-cask "utc-menu-clock"
 cask "visual-studio-code"
 cask "wechat"
 cask "zoom"
@@ -80,5 +79,5 @@ mas "Pages", id: 409201541
 mas "Sasquatch", id: 1465346522
 mas "Trello", id: 1278508951
 mas "Vimari", id: 1480933944
-cask "little-snitch"
 cask "mactex"
+mas "UTC Time", id: 1538245904
