@@ -74,12 +74,32 @@ sst() {	 # ssh then tmux attach
     /usr/bin/ssh -t $@ "tmux attach -d || tmux -2 new";
 }
 
-# python #
-alias py='export PYTHONBREAKPOINT=ipdb.set_trace; source $(pwd)/.venv/bin/activate'
-alias pyvenv='python3 -m venv venv; source venv/bin/activate; python -m pip install --upgrade pip; python -m pip install pip-tools; touch requirements.in'
+# python 
+export_python_breakpoint() {
+	debuggers=( ipdb pudb )
+	for d in "${debuggers[@]}" 
+	do
+ 		if pip list | grep "^$d " > /dev/null ; then
+ 			export PYTHONBREAKPOINT="$d".set_trace
+ 		fi
+	done
+}
+
+source_python_venv() {
+	venv_dirs=( venv .venv )
+	for v in "${venv_dirs[@]}" 
+	do
+		if [ -d $v ]; then
+			source $(pwd)/$v/bin/activate
+		fi
+	done
+}
+
+alias py='source_python_venv; export_python_breakpoint'
+alias pyvenv='python3 -m venv .venv; source .venv/bin/activate; python -m pip install --upgrade pip; python -m pip install pip-tools; touch requirements.in'
 alias pipt='pip-compile; pip-sync'
 
-# macos #
+# macos 
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
