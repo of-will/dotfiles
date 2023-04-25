@@ -37,7 +37,7 @@ c() {
 	    ls $(echo $CDPATH | tr ":" "\n")
 	else
 		if [[ -f $1 ]]; then
-		    bat -p "$1"
+		    bat --plain --paging=never "$1"
 		else
 		    cd "$1"
 		    ll
