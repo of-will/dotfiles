@@ -98,6 +98,7 @@ source_python_venv() {
 alias py='source_python_venv; export_python_breakpoint'
 alias pyvenv='python3 -m venv .venv; source .venv/bin/activate; python -m pip install --upgrade pip; python -m pip install pip-tools; touch requirements.in'
 alias pymake='cp ~/Documents/Projects/config/boilerplate/python3/project/{Makefile,requirements-dev.in} .'
+alias pymain='cp ~/Documents/Projects/config/boilerplate/python3/project/main.py .'
 alias pipt='pip-compile; pip-sync'
 
 # macos 
