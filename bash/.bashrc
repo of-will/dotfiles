@@ -142,3 +142,6 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# brew
+export HOMEBREW_NO_AUTO_UPDATE=1
